@@ -17,6 +17,10 @@ def get_db_data():
     return results
 
 
+@app.route('/')
+def index():
+    return ('hello')
+
 @app.route('/api')
 def api():
     results = get_db_data()
