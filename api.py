@@ -19,13 +19,11 @@ def get_db_data():
 
 @app.route('/')
 def index():
-    return ('hello')
+    return ('Welcome to get temperature and humidity data')
 
 @app.route('/api')
 def api():
     results = get_db_data()
-    print('hello')
-    print(type(results))
     data = []
     line = 0 
 
