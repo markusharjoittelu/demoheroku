@@ -11,11 +11,9 @@ load_dotenv()
 def get_db_data():
     DATABASE_URL = os.environ['DATABASE_URL']
     db = create_engine(DATABASE_URL)
-
     sql = text('SELECT * FROM datas')
     results = db.execute(sql)
     return results
-
 
 @app.route('/')
 def index():
@@ -32,7 +30,7 @@ def api():
         data.insert(line, r)
         line +=1
 
-    return jsonify({'data': data})
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.config['DEBUG']=True
