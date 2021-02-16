@@ -28,7 +28,7 @@ def api():
     line = 0 
 
     for row in results:
-        r = [row['times'],row['temperature'], row['humidity']]
+        r = [row['id'],row['times'],row['temperature'], row['humidity']]
         data.insert(line, r)
         line +=1
 
