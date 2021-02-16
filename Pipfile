@@ -12,6 +12,7 @@ tqdm = "*"
 psycopg2 = "*"
 requests = "*"
 gunicorn = "*"
+flask-cors = "*"
 
 [dev-packages]
 

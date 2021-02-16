@@ -3,8 +3,10 @@ from flask import jsonify
 from sqlalchemy import create_engine, text
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 load_dotenv()
 
 
