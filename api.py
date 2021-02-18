@@ -1,3 +1,4 @@
+''' api.py serves data from database via api '''
 from flask import Flask
 from flask import jsonify
 from sqlalchemy import create_engine, text
@@ -15,7 +16,7 @@ load_dotenv()
 def get_db_data():
     DATABASE_URL = os.environ['DATABASE_URL']
     db = create_engine(DATABASE_URL)
-    sql = text('SELECT * FROM datas')
+    sql = text('SELECT * FROM datas ORDER BY id')
     results = db.execute(sql)
     return results
 
@@ -33,7 +34,7 @@ def api():
 
     # Inset data from DB to list for jsonify function
     for row in results:
-        r = [row['id'],row['times'],row['temperature'], row['humidity']]
+        r = [row['id'],row['times'],row['temperature'], row['humidity'], row['owmtemp'], row['owmhum']]
         data.insert(line, r)
         line +=1
 
